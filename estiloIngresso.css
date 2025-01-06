@@ -1,0 +1,203 @@
+:root {
+    --red: #e84c3d;
+    --grey: #ecedef;
+    --black: #343434;
+    --text-dark: #525252;
+    --text-light: #a2aeae;
+    --white: #fff;
+  }
+  
+  .cardWrap {
+    width: 100%;
+    margin: 20px auto;
+    color: var(--white);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    background: linear-gradient(to bottom, var(--red) 0%, var(--red) 26%, var(--grey) 26%, var(--grey) 100%);
+    height: 11em;
+    float: left;
+    position: relative;
+    padding: 1em;
+
+  }
+  
+  .cardLeft {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 45%;
+    max-width: 279px;
+    
+  }
+  
+  .cardRight {
+    width: 6.5em;
+    border-left: 0.18em dashed var(--white);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    position: relative;
+  }
+  
+  .cardRight:before,
+  .cardRight:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.9em;
+    height: 0.9em;
+    background: var(--marromBonito);
+    border-radius: 50%;
+    left: -0.5em;
+  }
+  
+  .cardRight:before {
+    top: -0.4em;
+  }
+  
+  .cardRight:after {
+    bottom: -0.4em;
+  }
+  
+  h1 {
+    font-size: 1.1em;
+    margin-top: 0;
+    user-select: none; 
+  }
+  
+  h1 span {
+    font-weight: normal;
+  }
+  
+  .title,
+  .name,
+  .seat,
+  .time {
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  
+  .title h2,
+  .name h2,
+  .seat h2,
+  .time h2 {
+    font-size: 0.9em;
+    color: var(--text-dark);
+    margin: 0;
+  }
+  
+  .title span,
+  .name span,
+  .seat span,
+  .time span {
+    font-size: 0.7em;
+    color: var(--text-light);
+  }
+  
+  .title {
+    margin: 2em 0 0 0;
+  }
+  
+  .name,
+  .seat {
+    margin: 0.7em 0 0 0;
+  }
+  
+  .time {
+    margin: 0.7em 0 0 1em;
+  }
+  
+  .seat,
+  .time {
+    float: left;
+  }
+  
+  .eye {
+    position: relative;
+    width: 2em;
+    height: 1.5em;
+    background: var(--white);
+    margin: 0 auto;
+    border-radius: 1em / 0.6em;
+    z-index: 1;
+  }
+  
+  .eye:before,
+  .eye:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .eye:before {
+    width: 1em;
+    height: 1em;
+    background: var(--red);
+    z-index: 2;
+    left: 8px;
+    top: 4px;
+  }
+  
+  .eye:after {
+    width: 0.5em;
+    height: 0.5em;
+    background: var(--white);
+    z-index: 3;
+    left: 12px;
+    top: 8px;
+  }
+  
+  .number {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .number h3 {
+    color: var(--red);
+    margin: 0.9em 0 0 0;
+    font-size: 2.5em;
+  }
+  
+  .number span {
+    display: block;
+    color: var(--text-light);
+  }
+  
+  .barcode {
+    height: 2em;
+    width: 0;
+    margin: 1.2em 0 0 0.8em;
+    box-shadow: 1px 0 0 1px var(--black),
+                5px 0 0 1px var(--black),
+                10px 0 0 1px var(--black),
+                11px 0 0 1px var(--black),
+                15px 0 0 1px var(--black),
+                18px 0 0 1px var(--black),
+                22px 0 0 1px var(--black),
+                23px 0 0 1px var(--black),
+                26px 0 0 1px var(--black),
+                30px 0 0 1px var(--black),
+                35px 0 0 1px var(--black),
+                37px 0 0 1px var(--black),
+                41px 0 0 1px var(--black),
+                44px 0 0 1px var(--black),
+                47px 0 0 1px var(--black),
+                51px 0 0 1px var(--black),
+                56px 0 0 1px var(--black),
+                59px 0 0 1px var(--black),
+                64px 0 0 1px var(--black),
+                68px 0 0 1px var(--black),
+                72px 0 0 1px var(--black),
+                74px 0 0 1px var(--black),
+                77px 0 0 1px var(--black),
+                81px 0 0 1px var(--black);
+  }
+
+  @media (max-width: 373px) {
+    .cardLeft h2,.cardLeft span{
+        font-size: 11px;
+    }
+  }
