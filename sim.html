@@ -14,10 +14,11 @@
             --amareloClaro: #f8ffb8;
             --rosaClaro: #ffb8ec;
             --rosaEscuro: #ffa9e9;
-            --azulClaro:#e4fff9;
+            --azulClaro: #e4fff9;
             --carta: #810404;
-            --marromBonito: #5E3F3F
+            --marromBonito: #5E3F3F;
         }
+
         body {
             margin:0;
             background-color: var(--marromBonito);
@@ -26,41 +27,82 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            overflow: hidden; /* Garantir que não haja overflow */
         }
+
+        #content , img {
+            transition: opacity 2s ease-in-out;
+            opacity: 0; /* Inicialmente invisível */
+            visibility: hidden; /* Inicialmente invisível */
+        }
+
+        #content{
+            display: none;
+        }
+        #content.active, img.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        img {
+            transition: opacity 2s ease-in-out, visibility 2s;
+        }
+
     </style>
 </head>
 <body>
-    <div class="cardWrap">
-        <div class="card cardLeft">
-          <h1>Ingresso</h1>
-          
-          <div class="title">
-            <h2>Vingadores: Guerra Infinita</h2>
-            <span>Filme</span>
-          </div>
-          <div class="name">
-            <h2>Ruivinha Dramática</h2>
-            <span>Nome</span>
-          </div>
-          <div class="seat">
-            <h2>12/01</h2>
-            <span>dia</span>
-          </div>
-          <div class="time">
-            <h2>À definir 😜</h2>
-            <span>horário</span>
-          </div>
-          </div>
-        <div class="card cardRight">
-          <div class="eye"></div>
-          <div class="number">
-            <h3>12/01</h3>
-            <span>dia</span>
-          </div>
-          <div class="barcode"></div>
+    <img id="image" src="empolgado-comemorando.gif" alt="">
+    <div id="content">    
+        <div class="cardWrap">
+            <div class="card cardLeft">
+                <h1>Ingresso</h1>
+                <div class="title">
+                    <h2>Vingadores: Guerra Infinita</h2>
+                    <span>Filme</span>
+                </div>
+                <div class="name">
+                    <h2>Ruivinha Dramática</h2>
+                    <span>Nome</span>
+                </div>
+                <div class="seat">
+                    <h2>12/01</h2>
+                    <span>dia</span>
+                </div>
+                <div class="time">
+                    <h2>À definir 😜</h2>
+                    <span>horário</span>
+                </div>
+            </div>
+            <div class="card cardRight">
+                <div class="eye"></div>
+                <div class="number">
+                    <h3>12/01</h3>
+                    <span>dia</span>
+                </div>
+                <div class="barcode"></div>
+            </div>
         </div>
-      
-      </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.6913344995323!2d-46.538300199999995!3d-23.615400400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5d39265aff0f%3A0xe43d02e91d4a88d3!2sR.%20Ibatiba%2C%20124%20-%20Vila%20Metal%C3%BArgica%2C%20Santo%20Andr%C3%A9%20-%20SP%2C%2009220-608!5e0!3m2!1spt-BR!2sbr!4v1736032418918!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;max-width: 700px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.6913344995323!2d-46.538300199999995!3d-23.615400400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5d39265aff0f%3A0xe43d02e91d4a88d3!2sR.%20Ibatiba%2C%20124%20-%20Vila%20Metal%C3%BArgica%2C%20Santo%20Andr%C3%A9%20-%20SP%2C%2009220-608!5e0!3m2!1spt-BR!2sbr!4v1736032418918!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;max-width: 700px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <script>
+        window.onload = () => {
+            const img = document.getElementById('image');
+            const content = document.getElementById('content');
+            
+            // Mostrar a imagem inicialmente
+            img.classList.add('active');
+            
+            // Após 2 segundos (tempo da animação da imagem), esconder a imagem e mostrar o conteúdo
+            setTimeout(() => {
+                img.classList.remove('active');
+                content.style.display="block"
+                content.classList.add('active');
+            }, 2000);
+            setTimeout(()=>{
+                img.style.display='none'
+            },2000)
+        };
+    </script>
 </body>
 </html>
