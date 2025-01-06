@@ -97,16 +97,16 @@
   }
   
   .title {
-    margin: 2em 0 0 0;
+    margin: 26px 0 0 0;
   }
   
   .name,
   .seat {
-    margin: 0.7em 0 0 0;
+    margin: 10px 0 0 0;
   }
   
   .time {
-    margin: 0.7em 0 0 1em;
+    margin: 10px 0 0 20px;
   }
   
   .seat,
